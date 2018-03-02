@@ -1,14 +1,20 @@
 api_user_list:
-    path: /api/user/list
+    path: /api/user
     controller: App\API\Controller\User\ListController
     methods: [GET]
     options:
         expose: true
 api_user_delete:
-    path: /api/user/delete/{id}
+    path: /api/user/{id}
     controller: App\API\Controller\User\DeleteController
     methods: [DELETE]
     requirements:
         id: '\d+'
+    options:
+        expose: true
+api_user_new:
+    path: /api/user
+    controller: App\API\Controller\User\NewController
+    methods: [POST]
     options:
         expose: true

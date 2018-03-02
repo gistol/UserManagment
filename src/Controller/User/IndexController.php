@@ -5,7 +5,7 @@ namespace App\Controller\User;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class Index extends Controller
+class IndexController extends Controller
 {
     public function __invoke(): Response
     {

@@ -1,0 +1,13 @@
+user_index:
+    path: /user
+    controller: App\Controller\User\IndexController
+user_new:
+    path: /user/new
+    controller: App\Controller\User\NewController
+user_edit:
+    path: /user/edit/{id}
+    controller: App\Controller\User\EditController
+    requirements:
+        id: '\d+'
+    options:
+        expose: true

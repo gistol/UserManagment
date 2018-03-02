@@ -1,3 +1,7 @@
 homepage:
     path: /
-    controller: App\Controller\DefaultController\Index
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /user
+        permanent: true
+    methods: [GET]

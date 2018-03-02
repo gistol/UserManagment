@@ -12,5 +12,10 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "bootstrap": "^4.0.0",
+        "sweetalert": "^2.1.0"
     }
 }

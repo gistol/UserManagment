@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Address;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -19,6 +18,7 @@ class User
     private $id;
     /**
      * @var string
+     * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\Regex(
      *     pattern="/\d/",
@@ -28,7 +28,8 @@ class User
      */
     private $name;
     /**
-     * @var string
+     * @var string | null
+     * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\Regex(
      *     pattern="/\d/",
@@ -38,13 +39,9 @@ class User
      */
     private $surname;
     /**
-     * @var string
+     * @var string | null
+     * @ORM\Column(type="string", unique=true)
      * @Assert\NotBlank()
-     * @Assert\Regex(
-     *     pattern="/\w/",
-     *     match=false,
-     *     message="Your phone can not contain a letters"
-     * )
      */
     private $phoneNumber;
 
@@ -61,57 +58,57 @@ class User
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @return string
+     * @return string | null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param string | null $name
      */
-    public function setName(string $name): void
+    public function setName(?string $name = null): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return string
+     * @return string | null
      */
-    public function getSurname(): string
+    public function getSurname(): ?string
     {
         return $this->surname;
     }
 
     /**
-     * @param string $surname
+     * @param string | null $surname
      */
-    public function setSurname(string $surname): void
+    public function setSurname(?string $surname = null): void
     {
         $this->surname = $surname;
     }
 
     /**
-     * @return string
+     * @return string | null
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
     }
 
     /**
-     * @param string $phoneNumber
+     * @param string | null $phoneNumber
      */
-    public function setPhoneNumber(string $phoneNumber): void
+    public function setPhoneNumber(?string $phoneNumber = null): void
     {
         $this->phoneNumber = $phoneNumber;
     }
@@ -132,4 +129,5 @@ class User
     {
         $this->address = $address;
     }
+
 }

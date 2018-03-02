@@ -1,8 +1,9 @@
 import Vue from 'vue'
-import App from './App'
+import UserList from './components/user/List'
+import './main.scss';
 
 new Vue({
-    el: '#app',
-    template: '<App/>',
-    components: { App }
-})
+    el: '#user-list',
+    template: '<UserList/>',
+    components: { UserList }
+});
